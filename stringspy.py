@@ -85,6 +85,7 @@ moon_facts = ["The Moon is drifting away from the Earth.", "On average, the Moon
 '\n'.join(moon_facts)
 
 print(' ')
+
 #### EJERCICIO #####
 
 text= """Interesting facts about the Moon. The Moon is Earth's only satellite. There are several interesting facts about the Moon and how it affects life here on Earth. 
@@ -95,3 +96,51 @@ print(text)
 #Separate the paragraph into sentences
 sentences=text.split('. ') ## el espacio es para no tomer el punto del final
 print(sentences)
+
+
+##Find keywords
+for sentence in sentences:
+    if 'temperature' in sentence: ## devuelve verdadero
+        print(sentence)
+
+
+
+####### Formato de signo de porcentaje (%) ES poco usado
+"""El marcador de posición de la variable de la cadena es %s"""
+
+mass_percentage = "1/6"
+print("On the Moon, you would weigh about %s of your weight on Earth" % mass_percentage)
+
+print("""Both sides of the %s get the same amount of sunlight,
+     but only one side is seen from %s because
+    the %s rotates around its own axis when it orbits %s.""" % ("Moon", "Earth", "Moon", "Earth"))
+
+####
+######### El método format()
+
+mass_percentage = "1/6"
+print("On the Moon, you would weigh about {} of your weight on Earth".format(mass_percentage))
+
+print("""You are lighter on the {0}, because on the {0} 
+    you would weigh about {1} of your weight on Earth""".format("Moon", mass_percentage))
+
+print("""You are lighter on the {moon}, because on the {moon} 
+     you would weigh about {mass} of your weight on Earth""".format(moon="Moon", mass=mass_percentage))
+
+####Acerca de las cadenas f-strings
+print(f"On the Moon, you would weigh about {mass_percentage} of your weight on Earth")
+print(' ')
+
+####### Ejercicio#####
+
+name = 'Ganymede'
+planet = 'Mars'
+gravity = '1.43'
+
+template = """Gravity Facts about {name}
+----------------------------------------
+Planet Name: {planet}
+Gravity on {name}: {gravity} m/s2"""
+
+
+print(template.format(name=name, planet=planet, gravity=gravity))
